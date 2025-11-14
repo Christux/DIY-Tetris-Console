@@ -36,10 +36,6 @@
 #include "Game.h"
 #include "Logo.h"
 
-// Choose screen device
-//#define SSD1306
-#define SH1106
-
 #define SCREEN_WIDTH 128
 #define SCREEN_HEIGHT 64
 
