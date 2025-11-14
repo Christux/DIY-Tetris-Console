@@ -27,7 +27,6 @@
 
 #include <Arduino.h>
 #include <SPI.h>
-#include "Config.h"
 #include "Adafruit_SSD1306_Buffer.h"
 #include "Adafruit_SH1106G_Buffer.h"
 #include "FourBitsTable.h"
@@ -36,6 +35,10 @@
 #include "Melody.h"
 #include "Game.h"
 #include "Logo.h"
+
+// Choose screen device
+//#define SSD1306
+#define SH1106
 
 #define SCREEN_WIDTH 128
 #define SCREEN_HEIGHT 64
@@ -55,7 +58,7 @@
 uint8_t buffer[(SCREEN_WIDTH * SCREEN_HEIGHT + 7) / 8];
 uint8_t gridData[(GRID_HEIGHT * GRID_WIDTH + 1) / 2];
 
-#if SCREEN == SSD1306
+#ifdef SSD1306
 
 Adafruit_SSD1306_Buffer display(SCREEN_WIDTH, SCREEN_HEIGHT,
                                 OLED_MOSI, OLED_CLK, OLED_DC, OLED_RESET, OLED_CS,
@@ -83,7 +86,7 @@ void setup()
   // pinMode(3, OUTPUT);
   pinMode(JOYPAD_INPUT, INPUT_PULLUP);
 
-#if SCREEN == SSD1306
+#ifdef SSD1306
   // SSD1306_SWITCHCAPVCC = generate display voltage from 3.3V internally
   if (!display.begin(SSD1306_SWITCHCAPVCC))
   {

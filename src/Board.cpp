@@ -1,13 +1,12 @@
 #include <Arduino.h>
 #include <Adafruit_SSD1306.h>
 #include <Adafruit_SH110X.h>
-#include "Config.h"
 #include "FourBitsTable.h"
 #include "Board.h"
 #include "Font.h"
 #include "Tetrominos.h"
 
-#if SCREEN == SSD1306
+#ifdef SSD1306
 Board::Board(Adafruit_SSD1306* display)
   : _xoffset(2),
     _yoffset(7),

@@ -1,6 +1,5 @@
 #include "HardwareSerial.h"
 #include <Arduino.h>
-#include "Config.h"
 #include "FourBitsTable.h"
 #include "Game.h"
 

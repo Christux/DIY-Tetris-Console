@@ -22,7 +22,7 @@ class Board
     static constexpr uint8_t ScoreDigits = 8; /**< Number of digits used for score display */
     static constexpr uint8_t DigitSize = 4; /**< Size of digits in pixels */
 
-    #if SCREEN == SSD1306
+    #ifdef SSD1306
     Adafruit_SSD1306 *_display; /**< Pointer to SSD1306 display object */
     #else
     Adafruit_SH1106G *_display; /**< Pointer to SH1106G display object */
@@ -57,7 +57,7 @@ class Board
      */
     ~Board() {};
 
-    #if SCREEN == SSD1306
+    #ifdef SSD1306
     /**
      * @brief Constructs a Board object using an SSD1306 display.
      * @param display Pointer to an initialized Adafruit_SSD1306 display.
