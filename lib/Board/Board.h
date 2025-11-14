@@ -1,5 +1,6 @@
 #include <Adafruit_SSD1306.h>
 #include <Adafruit_SH110X.h>
+#include "FourBitsTable.h"
 
 #pragma once
 
