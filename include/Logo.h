@@ -1,5 +1,13 @@
 #pragma once
 
+/**
+ * @brief Bitmap for customizing the splash screen.
+ *
+ * This array stores a monochrome bitmap in PROGMEM. It can be used
+ * to display a custom logo or image on startup for OLED or similar displays.
+ *
+ * @note The bitmap is stored in program memory to save RAM on AVR-based Arduinos.
+ */
 const unsigned char logoBitmap[] PROGMEM = {
 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
   0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
